@@ -1,11 +1,22 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "./styles/Week.module.css";
 import { Box } from "grommet";
-
-const inter = Inter({ subsets: ["latin"] });
+import Day from "./components/Day";
 
 export default function Home() {
+  const dayNames = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const days = dayNames.map((name, i) => <Day key={i} name={name} />);
+
   return (
     <>
       <Head>
@@ -14,8 +25,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.header}></header>
-      <main className={styles.main}></main>
+      {/* <header className={styles.header}></header> */}
+      <main className={styles.week}>
+        <Box direction="row">{days}</Box>
+      </main>
       <footer></footer>
     </>
   );

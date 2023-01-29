@@ -1,0 +1,11 @@
+
+.timeBlock {
+  height: 150px;
+  margin: 0.5px;
+  padding: 10px;
+  background: #c52184;
+  color: white;
+}
+.timeBlock p {
+  margin: 0;
+}
